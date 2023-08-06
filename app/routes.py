@@ -9,17 +9,6 @@ from werkzeug.urls import url_parse
 @app.route('/index')
 @login_required
 def index():
-    user = {'username':'Warsame'}
-    posts = [
-        {
-            'author': {'username': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }
-    ]
     return render_template('index.html', user=user, posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
